@@ -1,0 +1,3 @@
+[submodule "src/core_atmosphere/physics/physics_wrf/shared"]
+	path = src/core_atmosphere/physics/physics_wrf/shared
+	url = https://github.com/mgduda/MMM-physics.git
