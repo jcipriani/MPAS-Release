@@ -1,5 +1,7 @@
 .SUFFIXES: .F .o
 
+VPATH = shared
+
 all: dummy physics_wrf
 
 dummy:
@@ -112,5 +114,5 @@ ifeq "$(GEN_F90)" "true"
 	$(CPP) $(CPPFLAGS) $(COREDEF) $(CPPINCLUDES) $< > $*.f90
 	$(FC) $(FFLAGS) -c $*.f90 $(FCINCLUDES) -I../../../framework -I../../../operators -I.. -I../../../external/esmf_time_f90
 else
-	$(FC) $(CPPFLAGS) $(COREDEF) $(FFLAGS) -c $*.F $(CPPINCLUDES) $(FCINCLUDES) -I../../../framework -I../../../operators -I.. -I../../../external/esmf_time_f90
+	$(FC) $(CPPFLAGS) $(COREDEF) $(FFLAGS) -c $< $(CPPINCLUDES) $(FCINCLUDES) -I../../../framework -I../../../operators -I.. -I../../../external/esmf_time_f90
 endif
